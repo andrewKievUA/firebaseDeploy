@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+import {Button,Row,Container,Col} from "react-bootstrap"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import StatMaster from "./component/StatMaster.jsx"
+
+import React, { Component } from 'react'
+
+export default class App extends Component {
+
+  state=[[],[]]
+
+
+
+
+
+  render() {
+   
+
+
+    return (
+
+
+      <div>
+
+
+
+
+<Row xs={1} sm={2} md={3}  lg={4} xl={5} xxl={5}  className="g-13">
+
+
+        <Button variant="outline-secondary"onClick={this.postDataBase}> Статистика производство </Button>{' '}
+        <Button variant="outline-secondary"onClick={this.postDataBase}> Аварии сборщика </Button>{' '}
+        <br/>
+        <br/>{" "}
+        
+        </Row>
+
+
+        <Container>
+  <Row>
+    <Col><StatMaster/></Col>
+    <Col><StatMaster/></Col>
+  </Row>
+ 
+</Container>
+
+
+
+
+
+       
+      </div>
+    )
+  }
 }
 
-export default App;
+
